@@ -1,5 +1,5 @@
 <template>
-login
+        LoadingComponent
 </template>
     
 <script setup lang='ts'>

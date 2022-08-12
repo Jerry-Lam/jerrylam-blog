@@ -1,5 +1,5 @@
 <template>
-login
+        LandingPage
 </template>
     
 <script setup lang='ts'>

@@ -1,5 +1,5 @@
 <template>
-login
+        ErrorComponent
 </template>
     
 <script setup lang='ts'>
