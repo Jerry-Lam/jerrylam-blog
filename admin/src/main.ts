@@ -5,11 +5,12 @@ import App from './App.vue'
 import router from './router'
 
 import './assets/index.css'
+import { useCounterStore } from './stores/counter'
 
-import loadingBar from '@/components/loadingBar.vue'
+// import loadingBar from '@/components/loadingBar.vue'
 
-const Vnode = createVNode(loadingBar);
-render(Vnode, document.body);
+// const Vnode = createVNode(loadingBar);
+// render(Vnode, document.body);
 
 const app = createApp(App)
 
@@ -18,11 +19,16 @@ app.use(router)
 
 app.mount('#app')
 
-router.beforeEach((to, from, next)=>{
-    Vnode.component?.exposed?.startLoading();
-    next()
-});
+// router.beforeEach(async (to, from, next) => {
+//     Vnode.component?.exposed?.startLoading();
+//     return true
+// });
 
-router.afterEach((to, from)=>{
-    Vnode.component?.exposed?.endLoading()
+router.afterEach((to, from) => {
+    const load = useCounterStore();
+    if (to.path === '/') {
+        return
+    } else {
+        load.closeLoading();
+    }
 })

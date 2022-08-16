@@ -1,17 +1,14 @@
+import { useCounterStore } from './../stores/counter';
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-
-import LoadingComponent from '../views/LoadingComponent.vue'
-import ErrorComponent from '../views/ErrorComponent.vue'
-
-const UserDetails = () =>
-  Promise.resolve({
-    
-  })
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Login",
+    beforeEnter(to, from) {
+      const load = useCounterStore();
+      load.openLoading();
+    },
     component: () => import('../views/Login.vue')
   },
   {
@@ -27,3 +24,7 @@ const router = createRouter({
 })
 
 export default router
+function useStore() {
+  throw new Error('Function not implemented.')
+}
+

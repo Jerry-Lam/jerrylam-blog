@@ -6,14 +6,28 @@
     <button class="shadow" @click="toPage('Login')">login</button>
     <button class="shadow ml-2.5" @click="toPage('Reg')">reg</button>
   </div>
-
-  <router-view></router-view>
+  <div v-show="loading">
+    <loading></loading>
+  </div>
+  <div v-show="!loading">
+    <router-view></router-view>
+  </div>
+  <div>
+    {{loading}}
+  </div>
 </template>
-  
+
 <script setup lang='ts'>
+import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router'
+import Loading from './components/loading.vue';
+
+import { useCounterStore } from './stores/counter';
+const load = useCounterStore();
+const { loading } = storeToRefs(load);
 
 const router = useRouter();
+
 
 const toPage = (url: string) => {
   router.push({
