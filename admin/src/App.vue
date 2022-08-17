@@ -1,19 +1,21 @@
 <template>
   <div class="a relative">
-    <div class="b absolute top-[25px] left-[25px]"></div>
+    <div class="b absolute top-[25px] left-[25px] z-10"></div>
+    <div class="c absolute top-[25px] left-[25px]"></div>
   </div>
   <div>
     <button class="shadow" @click="toPage('Login')">login</button>
     <button class="shadow ml-2.5" @click="toPage('Reg')">reg</button>
   </div>
-  <div v-show="loading">
-    <loading></loading>
-  </div>
-  <div v-show="!loading">
-    <router-view></router-view>
-  </div>
-  <div>
-    {{loading}}
+  <div class="relative">
+    <transition>
+      <div class="absolute z-10" v-show="loading">
+        <loading></loading>
+      </div>
+    </transition>
+    <div class="absolute" v-show="!loading">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -48,5 +50,20 @@ const toPage = (url: string) => {
     height: 50px;
     background-color: white;
   }
+
+  .c {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+  }
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
