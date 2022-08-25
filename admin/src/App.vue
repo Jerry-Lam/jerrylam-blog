@@ -17,6 +17,10 @@
       <router-view></router-view>
     </div>
   </div>
+  <div>
+    <img src="@/assets/prpr.gif" alt="" srcset="">
+    <img src="@/assets/sax.gif" alt="">
+  </div>
 </template>
 
 <script setup lang='ts'>
