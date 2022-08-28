@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="fixed top-0 w-full h-0.5">
         <div ref="bar" class="w-0 h-full bg-blue-500"></div>
     </div>
@@ -49,4 +49,4 @@ defineExpose({
 </script>
     
 <style>
-</style>
+</style> -->
