@@ -4,11 +4,11 @@
       <div class="w-screen h-screen overflow-hidden">
         <div class="relative w-screen h-screen">
           <transition>
-            <div class="absolute z-10" v-show="loading">
+            <div class="absolute z-10" v-show="sakanaLoading">
               <sakana></sakana>
             </div>
           </transition>
-          <div v-show="!loading">
+          <div v-show="!sakanaLoading">
             <router-view></router-view>
           </div>
           <button class="shadow" @click="toPage('Login')">login</button>
@@ -26,11 +26,13 @@ import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
 import sakana from './components/sakana.vue';
 
-import { useCounterStore } from './stores/counter';
 import Ceobe from './components/ceobe.vue';
+import { sakanaLoadingStore } from './stores/sakanaLoadingStore';
+import { ceobeSwitchStore } from './stores/ceobeSwitchStore';
 
-const load = useCounterStore();
-const { loading, ceobeSwitch } = storeToRefs(load);
+const { sakanaLoading } = storeToRefs(sakanaLoadingStore());
+
+const { ceobeSwitch } = storeToRefs(ceobeSwitchStore());
 
 const router = useRouter();
 

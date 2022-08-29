@@ -22,9 +22,11 @@
 </template>
     
 <script setup lang='ts'>
-import { useCounterStore } from '@/stores/counter';
+import { sakanaLoadingStore } from '@/stores/sakanaLoadingStore';
+import { storeToRefs } from 'pinia';
 import { onMounted, ref, watchEffect } from 'vue';
-const load = useCounterStore();
+
+const { sakanaLoading } = storeToRefs(sakanaLoadingStore());
 
 //控制sakana~加载动画
 let sakana = ref<HTMLElement>();
@@ -112,7 +114,7 @@ onMounted(() => {
 })
 
 watchEffect(() => {
-	if (!load.loading) {
+	if (!sakanaLoading.value) {
 		endLoading();
 	}
 })

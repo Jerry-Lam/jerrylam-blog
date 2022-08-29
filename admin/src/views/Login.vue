@@ -5,17 +5,17 @@
 </template>
     
 <script setup lang='ts'>
+import { sakanaLoadingStore } from '@/stores/sakanaLoadingStore';
 import { onMounted } from 'vue';
-import { useCounterStore } from '@/stores/counter';
 
-const load = useCounterStore();
+const sakanaLoading = sakanaLoadingStore();
 
 onMounted(() => {
   // setTimeout(() => {
     
   //   // console.log(load.loading)
   // }, 2000)
-  load.closeLoading();
+  sakanaLoading.closeLoading();
 })
 </script>
     

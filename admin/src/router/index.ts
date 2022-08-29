@@ -1,4 +1,4 @@
-import { useCounterStore } from './../stores/counter';
+import { sakanaLoadingStore } from '@/stores/sakanaLoadingStore';
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
@@ -6,8 +6,8 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "Login",
     beforeEnter(to, from) {
-      const load = useCounterStore();
-      load.openLoading();
+      const sakanaLoading = sakanaLoadingStore();
+      sakanaLoading.openLoading();
     },
     component: () => import('../views/Login.vue')
   },
