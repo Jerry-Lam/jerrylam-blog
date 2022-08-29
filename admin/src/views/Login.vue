@@ -11,10 +11,11 @@ import { useCounterStore } from '@/stores/counter';
 const load = useCounterStore();
 
 onMounted(() => {
-  setTimeout(() => {
-    load.closeLoading();
-    // console.log(load.loading)
-  }, 50000)
+  // setTimeout(() => {
+    
+  //   // console.log(load.loading)
+  // }, 2000)
+  load.closeLoading();
 })
 </script>
     
