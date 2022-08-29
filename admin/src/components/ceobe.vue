@@ -15,11 +15,15 @@
 </template>
     
 <script setup lang='ts'>
+import { useCounterStore } from '@/stores/counter';
 import throttle from '@/utils/throttle';
+import { storeToRefs } from 'pinia';
 import { ref, type Ref } from 'vue';
 
+const load = useCounterStore();
+const { ceobeSwitch } = storeToRefs(load);
+
 const ceobe: Ref<HTMLVideoElement | null> = ref(null);
-let ceobeSwitch: Ref<boolean> = ref(true);
 
 const ceobePlay = throttle(() => {
     ceobe.value?.play();
