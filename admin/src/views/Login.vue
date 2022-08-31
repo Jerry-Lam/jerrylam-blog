@@ -1,18 +1,25 @@
 <template>
-<div class="w-80 h-80 bg-cyan-600">
-  login
-</div>
+  <div>login</div>
 </template>
     
 <script setup lang='ts'>
 import { sakanaLoadingStore } from '@/stores/sakanaLoadingStore';
 import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const sakanaLoading = sakanaLoadingStore();
 
+// const toPage = (url: string) => {
+//   router.push({
+//     name: url
+//   })
+// }
+
 onMounted(() => {
   // setTimeout(() => {
-    
+  //   sakanaLoading.closeLoading();
   //   // console.log(load.loading)
   // }, 2000)
   sakanaLoading.closeLoading();
@@ -20,5 +27,4 @@ onMounted(() => {
 </script>
     
 <style>
-    
 </style>

@@ -11,8 +11,6 @@
           <div v-show="!sakanaLoading">
             <router-view></router-view>
           </div>
-          <button class="shadow" @click="toPage('Login')">login</button>
-          <button class="shadow ml-2.5" @click="toPage('Reg')">reg</button>
         </div>
         <ceobe></ceobe>
       </div>
@@ -23,24 +21,15 @@
 
 <script setup lang='ts'>
 import { storeToRefs } from 'pinia';
-import { useRouter } from 'vue-router';
-import sakana from './components/sakana.vue';
 
+import sakana from './components/sakana.vue';
 import Ceobe from './components/ceobe.vue';
+
 import { sakanaLoadingStore } from './stores/sakanaLoadingStore';
 import { ceobeSwitchStore } from './stores/ceobeSwitchStore';
 
 const { sakanaLoading } = storeToRefs(sakanaLoadingStore());
-
 const { ceobeSwitch } = storeToRefs(ceobeSwitchStore());
-
-const router = useRouter();
-
-const toPage = (url: string) => {
-  router.push({
-    name: url
-  })
-}
 
 </script>
   

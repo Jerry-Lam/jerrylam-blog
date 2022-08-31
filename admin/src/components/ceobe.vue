@@ -2,7 +2,7 @@
     <div class="relative">
         <div @click="ceobePlay"
             class="grid absolute bottom-0 -right-[3%] w-[330px] h-64 cursor-pointer overflow-hidden">
-            <div class="absolute place-self-center top-0 z-10" :class="ceobeSwitch ? 'text-black' : 'text-white'">
+            <div class="absolute place-self-center top-0" :class="ceobeSwitch ? 'text-black' : 'text-white'">
                 {{  ceobeSwitch ? '小刻关灯' : '小刻开灯'  }}
             </div>
             <div class="w-[500px] h-[550px] absolute place-self-center">

@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 import './assets/index.css'
-import { useCounterStore } from './stores/counter'
+import { sakanaLoadingStore } from './stores/sakanaLoadingStore'
 
 // import loadingBar from '@/components/loadingBar.vue'
 
@@ -25,10 +25,10 @@ app.mount('#app')
 // });
 
 router.afterEach((to, from) => {
-    const load = useCounterStore();
-    if (to.path === '/') {
+    const sakanaLoad = sakanaLoadingStore();
+    if (to.path === '/login') {
         return
     } else {
-        load.closeLoading();
+        sakanaLoad.closeLoading();
     }
 })

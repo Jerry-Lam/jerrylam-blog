@@ -3,8 +3,8 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "Login",
+    path: "/login",
+    name: "login",
     beforeEnter(to, from) {
       const sakanaLoading = sakanaLoadingStore();
       sakanaLoading.openLoading();
