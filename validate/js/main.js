@@ -6,19 +6,21 @@
 // $(() => {
 //     'use strict';
 
-    let rule = {
-        max: 100,
-        min: 10,
-        maxlength: 5,
-        numeric: false
-    }
+let rule = {
+    max: 100,
+    min: 10,
+    maxlength: 5,
+    numeric: false,
+    pattern: 'pattern:^[a-z0-9]$'
+}
 
-    var validator = new Validator('123', rule);
+var validator = new Validator(" a    a ", rule);
 
-    // var result = validator.validate_max();
-    // var result = validator.validate_min();
-    var result = validator.Validate_Numeric();
-    console.log(`result:`,result);
+// var result = validator.validate_max();
+// var result = validator.validate_min();
+// var result = validator.Validate_Numeric();
+var result = validator.Validate_Required();
+console.log(`result:`,result);
 // })
 
 

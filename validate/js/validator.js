@@ -47,7 +47,23 @@ class Validator {
         return isNumeric(this.#m_val);
     }
 
+    Validate_Required() {
+        let real = this.#m_val.trim();
+        if (!real && real !== 0)
+            return false;
+        return true;
+    }
 
+    Validate_pattern() {
+        let reg = new RegExp(this.#m_rule.pattern);
+        //正则对象
+        return reg.test(this.#m_val);
+    }
+
+}
+
+function isNumeric(value) {
+    return !isNaN(value - parseFloat(value));
 }
     // window.Validator = function (val, rule) {
     //     // this.is_valid = () => {
