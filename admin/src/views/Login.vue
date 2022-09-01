@@ -1,9 +1,12 @@
 <template>
-  <div>login</div>
+  <div>
+    <validateInputVue></validateInputVue>
+  </div>
 </template>
     
 <script setup lang='ts'>
 import { sakanaLoadingStore } from '@/stores/sakanaLoadingStore';
+import validateInputVue from '@/components/validateInput.vue';
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
