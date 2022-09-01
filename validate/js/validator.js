@@ -17,30 +17,50 @@ class Validator {
 
     constructor(val, rule) {
         this.#m_val = val;
-        this.#m_rule = rule
+        this.#m_rule = rule;
     }
 
     get() { }
     set() { }
 
+    is_valid(val) {
+        let key;
+        this.#m_val = val.value || this.#m_val;
+
+        //如果不是必填项，且没填任何内容，直接判定为合法
+        if (!this.#m_rule.required && !this.#m_val)
+            return true;
+
+        for (key in this.#m_rule) {
+            //防止重复检查
+            if (key === 'required')
+                continue;
+
+            let r = this[`Validate_${key}`]();
+            if (!r) return false;
+        }
+
+        return true;
+    }
+
     Validate_Max() {
         this.#pre_Max_Min();
-        return this.#m_val <= this.#m_rule.max;
+        return this.#m_val <= this.#m_rule.Max;
     }
 
     Validate_Min() {
         this.#pre_Max_Min();
-        return this.#m_val >= this.#m_rule.min;
+        return this.#m_val >= this.#m_rule.Min;
     }
 
     Validate_Maxlength() {
         this.#pre_Length();
-        return this.#m_val.length <= this.#m_rule.maxlength;
+        return this.#m_val.length <= this.#m_rule.Maxlength;
     }
 
     Validate_Minlength() {
         this.#pre_Length();
-        return this.#m_val.length >= this.#m_rule.minlength;
+        return this.#m_val.length >= this.#m_rule.Minlength;
     }
 
     Validate_Numeric() {
@@ -54,8 +74,8 @@ class Validator {
         return true;
     }
 
-    Validate_pattern() {
-        let reg = new RegExp(this.#m_rule.pattern);
+    Validate_Pattern() {
+        let reg = new RegExp(this.#m_rule.Pattern);
         //正则对象
         return reg.test(this.#m_val);
     }
