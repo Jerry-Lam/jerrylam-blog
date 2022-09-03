@@ -1,8 +1,15 @@
 <template>
     <div>
         <label>用户名</label>
-        <input ref="userName" :dataRule="dataRule.maxlength = 5" v-model="inputData" type="text" @change="validata()">
-        <div v-if="!nameInputError">姓名格式有误</div>
+        <input ref="userName" :dataRule="nameDataRule.maxlength = 5" v-model="nameData" type="text"
+            @change="namevalidata()">
+        <div v-if="!nameInputError">用户名格式有误</div>
+    </div>
+    <div>
+        <label>密码</label>
+        <input ref="passWord" :dataRule="passwordDataRule.required = true" v-model="passwordData" type="text"
+            @change="passwordvalidata()">
+        <div v-if="!passwordInputError">密码不能为空</div>
     </div>
 </template>
     
@@ -11,20 +18,32 @@ import isNumeric from '@/utils/isNumeric';
 import { onMounted, ref, type Ref } from 'vue';
 
 let userName: Ref<HTMLInputElement | undefined> = ref<HTMLInputElement>();
+let passWord: Ref<HTMLInputElement | undefined> = ref<HTMLInputElement>();
 
-let inputData: Ref<string | number | undefined> = ref<string | number>();
+let nameData: Ref<string | number | undefined> = ref<string | number>();
+let passwordData: Ref<string | number | undefined> = ref<string | number>();
 
 let nameInputError: Ref<boolean | undefined> = ref<boolean>(true);
+let passwordInputError: Ref<boolean | undefined> = ref<boolean>(true);
 
-const dataRule: rule = {}
+const nameDataRule: rule = {};
+const passwordDataRule: rule = {}
 
-let valid: Validator;
+let namevalid: Validator;
+let passwordvalid: Validator;
+
 onMounted(() => {
 })
 
-const validata = () => {
-    valid = new Validator(inputData.value, dataRule);
-    nameInputError.value = valid.is_valid();
+const namevalidata = () => {
+    namevalid = new Validator(nameData.value, nameDataRule);
+    nameInputError.value = namevalid.is_valid();
+}
+
+const passwordvalidata = () => {
+    passwordvalid = new Validator(passwordData.value, passwordDataRule);
+    passwordInputError.value = passwordvalid.is_valid();
+    console.log(passwordInputError.value);
 }
 
 type rule = {
@@ -60,15 +79,10 @@ class Validator {
         let key: string;
 
         //如果不是必填项，且没填任何内容，直接判定为合法
-        // if (!this.m_rule?.required && !this.m_val)
-        //     return true;
+        if (!this.m_rule?.required && !this.m_val)
+            return true;
 
         for (key in this.m_rule) {
-            //防止重复检查
-            if (key === 'required')
-                continue;
-
-
             let r = eval(`this["Validate_${key}"]()`);
             if (!r) return false;
         }
@@ -106,7 +120,7 @@ class Validator {
         return isNumeric(this.m_val);
     }
 
-    Validate_rquired() {
+    Validate_required() {
         let real = (this.m_val as string).trim();
         if (!real)
             return false;
