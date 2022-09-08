@@ -75,7 +75,7 @@ class Validator {
     }
 
     Validate_required() {
-        let real = (this.m_val as string).trim();
+        let real = (this.m_val as string)?.trim();
         if (!real)
             return false;
         return true;

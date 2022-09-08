@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 import './assets/index.css'
+import './assets/cur.css'
 import { sakanaLoadingStore } from './stores/sakanaLoadingStore'
 
 // import loadingBar from '@/components/loadingBar.vue'
