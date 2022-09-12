@@ -46,7 +46,7 @@ const login = () => {
     userName.validata();
     passWord.validata();
     if (userName.inputError.value && passWord.inputError.value)
-        toPage('Reg');
+        toPage('Dashboard');
 }
 
 const toPage = (url: string) => {
