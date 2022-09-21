@@ -14,11 +14,11 @@ import { onMounted } from 'vue';
 const sakanaLoading = sakanaLoadingStore();
 
 onMounted(() => {
-  // setTimeout(() => {
-  //   sakanaLoading.closeLoading();
-  //   // console.log(load.loading)
-  // }, 2000)
-  sakanaLoading.closeLoading();
+  setTimeout(() => {
+    sakanaLoading.closeLoading();
+    // console.log(load.loading)
+  }, 2000)
+  // sakanaLoading.closeLoading();
 })
 </script>
     
