@@ -52,22 +52,5 @@ const ceobePlay = throttle(() => {
 </script>
     
 <style>
-.v-enter-from {
-    padding-bottom: 10px;
-    width: 3rem;
-}
 
-.v-enter-active {
-    transition: 0.5s ease;
-}
-
-.v-enter-to {
-    padding-bottom: 0;
-    width: 1.5rem;
-}
-
-/* .v-enter-from,
-.v-leave-to {
-    opacity: 0;
-} */
 </style>
