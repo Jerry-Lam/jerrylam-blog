@@ -10,6 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/login",
     name: "Login",
+    meta: { isPublic: true },
     beforeEnter(to, from) {
       const sakanaLoading = sakanaLoadingStore();
       sakanaLoading.openLoading();
@@ -28,8 +29,16 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  if (!to.meta.isPublic && !localStorage.token)
+    next('/login');
+
+    
+  next();
+})
+
 export default router
-function useStore() {
-  throw new Error('Function not implemented.')
-}
+// function useStore() {
+//   throw new Error('Function not implemented.')
+// }
 

@@ -17,8 +17,10 @@
 </template>
     
 <script setup lang='ts'>
+// import Service from '@/api/request';
 import router from '@/router';
 import { Validator, type rule } from '@/utils/Validator';
+import axios from 'axios';
 import { onMounted, ref, type Ref } from 'vue';
 
 class valid {
@@ -37,16 +39,23 @@ class valid {
 }
 
 onMounted(() => {
+    if (localStorage.token)
+        localStorage.clear()
 })
 
 let userName = new valid();
 let passWord = new valid();
 
-const login = () => {
+const login = async () => {
     userName.validata();
     passWord.validata();
-    if (userName.inputError.value && passWord.inputError.value)
+    if (userName.inputError.value && passWord.inputError.value) {
+        let data = { "username": userName.data.value, "password": passWord.data.value };
+        const res = await axios.post('/api/login', data);
+        localStorage.token = res.data.token
         toPage('Dashboard');
+    }
+
 }
 
 const toPage = (url: string) => {
