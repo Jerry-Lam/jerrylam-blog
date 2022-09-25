@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            width: 600px;
+            height: 220px;
+            border: solid 3px black;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+        }
+
+        div:nth-of-type(1) {
+            border: solid 3px red;
+            float: left;
+        }
+
+        div:nth-of-type(2) {
+            background: blue;
+            float: right;
+        }
+        /* 父盒子里的元素都浮动了，父盒子的高度就消失了（前提是父盒子本身没有高度） */
+        /* 浮动可以设置方向 */
+        /* 浮动的元素是限制在父盒子的内边框的 */
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+
+</body>
+
+</html>

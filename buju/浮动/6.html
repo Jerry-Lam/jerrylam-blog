@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            width: 610px;
+            height: 220px;
+            border: solid 3px black;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+        }
+
+        div.red {
+            border: solid 2px red;
+            float: left;
+        }
+
+        div.green {
+            border: solid 2px green;
+            float: right;
+        }
+
+        div.blue {
+            background: blue;
+            clear: both;
+        }
+
+        /* 元素浮动后占用的宽高消失，后面的元素可以清楚对应的浮动来取消位置的变动
+            如果清除的位置不对，那么还是无法生效，比如元素是右浮动，清除的是左浮动 */
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </main>
+
+</body>
+
+</html>

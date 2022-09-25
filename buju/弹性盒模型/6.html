@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-top: 50px;
+            padding-left: 50px;
+        }
+
+        article {
+            border: solid 5px blueviolet;
+            width: 400px;
+            display: flex;
+            flex-direction: column-reverse;
+            /* 弹性盒子里的弹性元素默认是水平排列
+                为弹性盒子设定规则为垂直排列
+                影响里面的元素改变排列规则 */
+                /* row水平
+                    row-reverse水平翻转
+                    column垂直
+                    column-reverse垂直翻转 */
+        }
+
+        article * {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 10px;
+            font-size: 25px;
+            color: white;
+        }
+
+        /* 弹性盒子里面放弹性元素
+            为盒子定义的规则影响里面的元素 */
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+
+</html>

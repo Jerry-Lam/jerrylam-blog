@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            width: 620px;
+            height: 220px;
+            border: solid 3px black;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        span {
+            border: solid 2px blue;
+            width: 300px;
+            height: 50px;
+            /* 宽高无效 */
+            float: left;
+            /* 加上浮动后，宽高就有效了 */
+        }
+        span:nth-of-type(2)
+        {
+            float: right;
+        }
+        /* 元素浮动后就变成了行级的块 */
+        /* 块元素可以设置宽高，行元素不行 */
+        
+    </style>
+</head>
+
+<body>
+    <main>
+        <span>123</span>
+        <span>456</span>
+    </main>
+
+</body>
+
+</html>

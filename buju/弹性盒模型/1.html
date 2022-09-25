@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            position: relative;
+            height: 100vh;
+        }
+
+        main nav {
+            width: 80px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: blueviolet;
+        }
+        /* 没给高度，用定位来设置元素高度 */
+        /* 绝对定位，参考父盒子的位置，父盒子需要有高度才可以用定位设置元素高度 */
+
+        main article {
+            background: #ccc;
+            padding-left: 90px;
+            background-clip: content-box;
+            /* 裁切背景，根据内容 */
+            height: 100vh;
+        }
+        /* 传统方式布局 */
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav></nav>
+        <article>aa</article>
+    </main>
+</body>
+
+</html>

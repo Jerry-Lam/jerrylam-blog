@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        article {
+            border: solid 8px blueviolet;
+            width: 600px;
+            height: 600px;
+            margin: 100px;
+            position: relative;
+            overflow: scroll;
+        }
+
+        section {
+            height: 3000px;
+            background: #ddd;
+        }
+
+        div {
+            background: red;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* 滚动条不会影响定位的位置
+            滚动时定位的元素跟着内容一起滚动 */
+    </style>
+</head>
+
+<body>
+    <article>
+        <section>
+            <div></div>
+        </section>
+    </article>
+</body>
+
+</html>

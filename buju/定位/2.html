@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            border: solid 5px blueviolet;
+            width: 400px;
+            height: 400px;
+            padding: 30px;
+        }
+
+        p img {
+            width: 30px;
+            height: 30px;
+            background: red;
+            position: absolute;
+            top: 100px;
+        }
+
+        /* 绝对定位
+            元素原来的位置占据空间丢失 */
+        /* 绝对定位相对于父盒子的定位属性作为参考系，不区分相对定位还是绝对定位
+            如何父盒子没有定位属性，那么会一直往上找
+            一直找到body */
+    </style>
+</head>
+
+<body>
+    <p>
+        <img src="" alt="">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure explicabo ut earum, dolorum delectus quasi? Nobis
+        quia, deleniti dolores dolorem atque nesciunt illum minus a harum, voluptas, sequi quidem laboriosam.
+    </p>
+</body>
+
+</html>

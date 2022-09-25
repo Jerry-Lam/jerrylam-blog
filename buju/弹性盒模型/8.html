@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-top: 50px;
+            padding-left: 50px;
+        }
+
+        article {
+            border: solid 5px blueviolet;
+            width: 280px;
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap-reverse; */
+            flex-flow: row wrap;
+            /* 同时设置方向和折行 */
+        }
+
+        article * {
+            width: 100px;
+            height: 100px;
+            background: red;
+            padding: 10px;
+            box-sizing: border-box;
+            /* 盒子大小不超出盒子边框，加内边距，外边距不影响 */
+            background-clip: content-box;
+            /* 背景裁切，只显示内容区域有背景，内边距没有 */
+            font-size: 35px;
+            color: white;
+        }
+
+        
+
+        /* 弹性元素溢出盒子处理 */
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+
+</html>

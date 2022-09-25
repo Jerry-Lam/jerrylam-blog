@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        article {
+            border: solid 8px blueviolet;
+            width: 400px;
+            height: 400px;
+            margin: 100px;
+            position: relative;
+        }
+
+        div {
+            background: red;
+            /* width: 200px;
+            height: 200px; */
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            right: 0;
+            bottom: 0;
+        }
+        /* 通过定位设置元素尺寸，前提是不能设置宽高
+            这里从距离左边100像素到右边占满
+            距离上边100像素到底边占满 */
+
+        /* 给一个元素设置相对定位而不去修改上下左右相当于没有改变 */
+
+    </style>
+</head>
+
+<body>
+    <article>
+        <div></div>
+    </article>
+</body>
+
+</html>

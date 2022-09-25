@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            /* 占满剩余空间 */
+            background: #ddd;
+        }
+
+        footer {
+            background: red;
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            /* 默认水平排列
+                内容分配方式为平均分配 */
+            /* 每个子元素平均分配了就可以随意增加元素了 */
+        }
+
+        footer div {
+            flex: 1;
+            /* 每个div占满自身元素的剩余空间 */
+            text-align: center;
+            line-height: 3em;
+            color: #fff;
+        }
+
+        footer div:nth-child(n+2) {
+            /* n从0开始到无限大
+                这里是0+2，1+2.就是第二个和第三个元素 */
+            border-left: solid 1px #ddd;
+        }
+
+        /* 微信弹性盒子布局 */
+        /* 弹性盒子默认水平排列 */
+        /*  */
+    </style>
+</head>
+
+<body>
+    <main>111</main>
+    <footer>
+        <div>订阅</div>
+        <div>服务</div>
+        <div>预约</div>
+        <div>我的</div>
+    </footer>
+</body>
+
+</html>

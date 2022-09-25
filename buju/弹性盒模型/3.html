@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            height: 100vh;
+            background: #ccc;
+        }
+
+        footer {
+            position: fixed;
+            /* 固定定位，永远在定的位置，滚动不影响 */
+            bottom: 0;
+            /* 固定定位需要告知定到哪 */
+            height: 50px;
+            width: 100vw;
+            background: blueviolet;
+            border-top: solid 5px #333;
+        }
+
+        footer div {
+            float: left;
+            width: 33%;
+            height: 100%;
+            /* background: yellowgreen; */
+            color: #fff;
+            text-align: center;
+            line-height: 3em;
+        }
+
+        footer div:nth-child(n+2) {
+            border-left: solid 1px #333;
+        }
+        /* 微信传统布局 */
+    </style>
+</head>
+
+<body>
+    <main>
+    </main>
+    <footer>
+        <div>订阅</div>
+        <div>服务</div>
+        <div>我的</div>
+    </footer>
+</body>
+
+</html>
