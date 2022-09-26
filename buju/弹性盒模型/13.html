@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-top: 50px;
+            padding-left: 50px;
+        }
+
+        article {
+            border: solid 5px blueviolet;
+            width: 550px;
+            display: flex;
+            height: 100px;
+            flex-direction: row;
+        }
+
+        article div:nth-child(1) {
+            flex-grow: 0;
+        }
+
+        article div:nth-child(2) {
+            flex-grow: 1
+        }
+
+        article div:nth-child(3) {
+            flex-grow: 3
+        }
+
+        article * {
+            /* flex-grow: 1; */
+            /* 可用空间分配
+                当所有元素占据空间没超过弹性盒子空间
+                可以对剩余空间进行分配
+                flex-grow: 1平均分配,后面的数字是占几份 */
+            width: 100px;
+            height: 100px;
+            background: red;
+            padding: 10px;
+            box-sizing: border-box;
+            /* 盒子大小不超出盒子边框，加内边距，外边距不影响 */
+            background-clip: content-box;
+            /* 背景裁切，只显示内容区域有背景，内边距没有 */
+            font-size: 35px;
+            color: white;
+        }
+
+
+
+        /* 弹性元素自身规则 */
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+
+</html>
