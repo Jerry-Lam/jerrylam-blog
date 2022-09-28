@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden w-screen h-screen flex flex-col justify-center items-center bg-[url('@/assets/skadi.png')] bg-cover dark:bg-slate-800 dark:bg-none">
+  <div class="overflow-hidden w-screen h-screen flex flex-col justify-center items-center bg-[url('@/assets/skadi.png')] bg-cover bg-center dark:bg-slate-800 dark:bg-none">
     <div class="grid place-items-center text-black dark:text-white">
       <validateInputVue></validateInputVue>
     </div>

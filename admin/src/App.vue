@@ -12,7 +12,7 @@
             <router-view></router-view>
           </div>
         </div>
-        <ceobe></ceobe>
+        <ceobe class="hidden md:block"></ceobe>
       </div>
     </div>
   </div>
