@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        :root {
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        header {
+            border-bottom: solid 5px #16a085;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+        }
+
+        header .navbar {
+            display: flex;
+            /* height: 60px; */
+            /* 固定高度不会撑开 */
+            padding: 1rem 0;
+            align-items: center;
+        }
+
+        header .navbar .logo {
+            color: #16a085;
+            font-weight: bold;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+
+        header .navbar .logo+label {
+            display: none;
+        }
+
+        header .navbar .logo+label+input {
+            display: none;
+        }
+
+        header .navbar .collapse {
+            display: flex;
+            /* flex: 1;这里不能使用flex:1;会有问题 */
+            flex-grow: 1;
+        }
+
+        header .navbar .collapse .form a {
+            border: solid 1px #16a085;
+            color: #16a085;
+            border-radius: .2rem;
+            padding: .2rem 1rem;
+        }
+
+        header .navbar .collapse .form .form-bg {
+            background: #16a085;
+            color: white;
+        }
+
+        header .navbar .collapse .links {
+            display: flex;
+            margin-right: auto;
+        }
+
+        header .navbar .collapse .links li {
+            margin: 0 10px;
+        }
+
+        header .navbar .collapse .links a {
+            color: #777;
+            font-weight: bold;
+        }
+
+        header .navbar .collapse .links a:hover {
+            color: #333;
+        }
+
+        /* 小于768的样式 */
+        @media screen and (max-width:768px) {
+            .container {
+                width: 95%;
+                margin: 0 auto;
+            }
+        }
+
+        /* 超过768的样式 */
+        @media screen and (min-width:768px) {
+            .container {
+                width: 740px;
+                margin: 0 auto;
+            }
+        }
+
+        /* 960以下的样式 */
+        @media screen and (max-width:960px) {
+            header .navbar {
+                flex-wrap: wrap;
+            }
+
+            header .navbar .collapse {
+                display: none;
+            }
+
+            header .navbar .logo {
+                margin-right: auto;
+            }
+
+            header .navbar .logo+label {
+                display: block;
+                border: solid 1px #ddd;
+                padding: .4rem 0.8rem;
+                color: #555;
+                cursor: pointer;
+            }
+
+            header .navbar .logo+label+input:checked+.collapse {
+                display: block;
+            }
+
+            header .navbar .collapse {
+                width: 100%;
+                flex-flow: column;
+            }
+
+            header .navbar .collapse .links {
+                flex-direction: column;
+                margin-bottom: 1.2rem;
+            }
+
+            header .navbar .collapse .links li {
+                margin: .4rem 0;
+            }
+        }
+
+        /* 超过960的样式 */
+        @media screen and (min-width:960px) {}
+
+        /* 超过1200的样式 */
+        @media screen and (min-width:1200px) {
+            .container {
+                width: 1150px;
+                margin: 0 auto;
+            }
+        }
+
+        /* 注意样式优先级，1200也超过960，后出现的样式优先级高，
+            所以960要放前面 */
+
+        /* @media screen and (min-width:960px) and (max-width:1200px) {
+            body {
+                background: green;
+            }
+        } */
+        /* 也可以给960限制最大范围 */
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="" class="logo">logo</a>
+                <label for="toggle-nav">
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                </label>
+                <input type="checkbox" id="toggle-nav">
+                <div class="collapse">
+                    <ul class="links">
+                        <li><a href="">第一项</a></li>
+                        <li><a href="">第二项</a></li>
+                        <li><a href="">第三项</a></li>
+                        <li><a href="">第四项</a></li>
+                    </ul>
+                    <div class="form">
+                        <a href="">登录</a>
+                        <a href="" class="form-bg">注册</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script src="https://use.fontawesome.com/b71aef18e2.js"></script>
+</body>
+
+</html>

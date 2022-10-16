@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            width: 400px;
+            height: 100px;
+            display: inline-grid;
+            border: solid 1px silver;
+            grid-template-columns: repeat(4, 80px);
+            justify-content: center;
+            /* align-content: center; */
+            /* 当前只有一行且没有设置行的高度
+                如果设置格子在容器里的垂直（行内位置）位置
+                那么默认占满会失效 */
+            /* 上面是格子，下面是元素 */
+            justify-items: end;
+            align-items: end;
+
+        }
+        /* 这个例子是栅格容器
+            栅格格子
+            栅格元素
+            一起举例
+            栅格格子只有80宽度，没有占满容器
+            把格子放容器居中
+            然后把元素放右下角 */
+        div {
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            font-size: 25px;
+            height: 50px;
+            width: 50px;
+            color: white;
+            box-sizing: border-box;
+            border: solid 1px blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </article>
+</body>
+
+</html>

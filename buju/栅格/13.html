@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            width: 400px;
+            height: 100px;
+            display: inline-grid;
+            border: solid 1px silver;
+            grid-template-columns: repeat(4, 60px);
+            /* justify-content: space-around;
+            align-content: center; */
+            place-content: center space-around;
+            /* 简写，前面垂直后面水平 */
+        }
+        /* 当栅格格子占栅格容器的空间有富裕
+            可以使用justify-content设置放置位置
+            用法和flex一样
+            start
+            end
+            space-around
+            space-between
+            space-evenly */
+        /* 垂直的也一样align-content: center; */
+
+        div {
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            font-size: 25px;
+            color: white;
+            height: 50px;
+            box-sizing: border-box;
+            border: solid 1px blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </article>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            width: 300px;
+            height: 100px;
+            border: solid 5px silver;
+            display: inline-grid;
+            grid-template-rows: 50% 50%;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+        }
+        /* 栅格有行和列，需要设置行列的大小和个数 */
+        /* 栅格有三个内容:
+            栅格容器
+            栅格格子:容器里有多少个格子,几行几列,格子的大小可以占满/不占满容器,格子的摆放在容器的位置
+            栅格元素:栅格格子里的元素,大小可以超出格子,不超出格子可以设置元素在格子的位置 */
+        /* 栅格容器的大小和元素的大小没有关系 */
+        /* 元素的大小可以超出栅格格子，元素在栅格格子的位置默认从左到右，上到下 */
+        /* 元素大小超出栅格格子可能会和其他元素重叠 */
+        /* 元素也是一个div可以设置定位浮动弹性盒子 */
+        div {
+            /* width: 200px;
+            height: 200px; */
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blue;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* 元素不指定宽高默认占满栅格容器 */
+    </style>
+</head>
+
+<body>
+
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </article>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            width: 400px;
+            height: 100px;
+            display: inline-grid;
+            border: solid 1px silver;
+            grid-template-columns: repeat(4, 100px);
+            /* justify-items: center;
+            align-items: center; */
+            place-items: center end;
+            /* 元素在栅格位置的简写
+                先垂直后水平 */
+        }
+
+
+        /* 栅格格子里的元素，如果不给大小，默认占满整个空间
+            justify-items: start;
+            end
+            center
+            stretch拉撑占满,拉撑必须是没有宽高
+            按元素自身宽度大小占据空间，放在左边开始 */
+        /* 默认是从左到右 */
+        /* 如果元素没有内容，没有大小，那就不占空间 */
+        /* align-items: stretch;
+            按元素自身高度大小占据空间 */
+        div {
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            font-size: 25px;
+            height: 50px;
+            width: 50px;
+            color: white;
+            box-sizing: border-box;
+            border: solid 1px blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </article>
+</body>
+
+</html>

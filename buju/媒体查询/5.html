@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 小于768的样式 */
+        @media screen and (max-width:768px) {
+            body {
+                background: yellow;
+            }
+        }
+
+        /* 超过768的样式 */
+        @media screen and (min-width:768px) {
+            body {
+                background: blue;
+            }
+        }
+
+        /* 超过960的样式 */
+        @media screen and (min-width:960px) {
+            body {
+                background: green;
+            }
+        }
+
+        /* 超过1200的样式 */
+        @media screen and (min-width:1200px) {
+            body {
+                background: red;
+            }
+        }
+
+        /* 注意样式优先级，1200也超过960，后出现的样式优先级高，
+            所以960要放前面 */
+
+        /* @media screen and (min-width:960px) and (max-width:1200px) {
+            body {
+                background: green;
+            }
+        } */
+        /* 也可以给960限制最大范围 */
+    </style>
+</head>
+
+<body>
+    <h1>大于1200是红色</h1>
+    <h1>大于960是绿色</h1>
+    <h1>大于768是蓝色</h1>
+    <h1>小于768是黄色</h1>
+</body>
+
+</html>
