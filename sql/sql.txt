@@ -1,0 +1,45 @@
+-- CREATE TABLE `testuser` (
+-- id int(11) NOT NULL AUTO_INCREMENT,
+-- username char(20) NOT NULL DEFAULT '' COMMENT '用户名',
+-- password varchar(255) NOT NULL DEFAULT '' COMMENT '密码',
+-- PRIMARY KEY (id)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `webtest` (
+-- id int(11) NOT NULL AUTO_INCREMENT,
+-- name char(20) NOT NULL DEFAULT '' COMMENT '站点名称',
+-- url varchar(255) NOT NULL DEFAULT '',
+-- alexa int(11) NOT NULL DEFAULT '0' COMMENT 'Alexa 排名',
+-- sal double COMMENT '广告收入',
+-- country char(10) NOT NULL DEFAULT '' COMMENT '国家',
+-- createtime DATETIME DEFAULT NOW(),
+-- updatetime DATETIME DEFAULT NOW() ON UPDATE NOW(),
+-- PRIMARY KEY (id)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- INSERT INTO `webtest` VALUES
+-- (1, 'Google', 'https://www.google.cm/', '1', 2000,'USA',now(),now()),
+-- (2, '淘宝', 'https://www.taobao.com/', '13',2050, 'CN',now(),now()),
+-- (3, '菜鸟教程', 'http://www.runoob.com/', '4689',0.0001, 'CN',now(),now()),
+-- (4, '微博', 'http://weibo.com/', '20',50, 'CN',now(),now()),
+-- (5, 'Facebook', 'https://www.facebook.com/', '3', 500,'USA',now(),now()),
+-- (6, default, default, default, 2000,default,default,default);
+-- CREATE TABLE IF NOT EXISTS `access_log` (
+-- `aid` int(11) NOT NULL AUTO_INCREMENT,
+-- `site_id` int(11) NOT NULL DEFAULT '0' COMMENT '网站id',
+-- `count` int(11) NOT NULL DEFAULT '0' COMMENT '访问次数',
+-- `date` date NOT NULL,
+-- PRIMARY KEY (`aid`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- INSERT INTO `access_log` (`aid`, `site_id`, `count`, `date`) VALUES
+-- (1, 1, 45, '2016-05-10'),
+-- (2, 3, 100, '2016-05-13'),
+-- (3, 1, 230, '2016-05-14'),
+-- (4, 2, 10, '2016-05-14'),
+-- (5, 5, 205, '2016-05-14'),
+-- (6, 4, 13, '2016-05-15'),
+-- (7, 3, 220, '2016-05-15'),
+-- (8, 5, 545, '2016-05-16'),
+-- (9, 3, 201, '2016-05-17'),
+-- (10, 88, 9999, '2016-09-09');
+-- select * from websites
+
+-- update webtest set sal = null where id = 3
